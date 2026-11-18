@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# User data & runtime storage
+storage/
+downloads/
+
+# Internal docs
+docs/
+
+# Build output
+dist/
+
+# Large binaries (distributed via Releases, not the repo)
+main/ffmpeg/*.exe
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / IDE
+.DS_Store
+Thumbs.db

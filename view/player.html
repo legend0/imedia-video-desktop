@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放器</title>
+    <link rel="stylesheet" href="./css/player.css">
+    <style>
+        /* 加载动画 */
+        .player-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: hsl(var(--background));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-app-region: drag;
+        }
+
+        .player-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading-wave-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            height: 40px;
+        }
+
+        .loading-wave {
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--primary) / 0.5));
+            border-radius: 3px;
+            animation: loading-wave 1.2s ease-in-out infinite;
+        }
+
+        .loading-wave:nth-child(1) { animation-delay: 0s; }
+        .loading-wave:nth-child(2) { animation-delay: 0.1s; }
+        .loading-wave:nth-child(3) { animation-delay: 0.2s; }
+        .loading-wave:nth-child(4) { animation-delay: 0.3s; }
+        .loading-wave:nth-child(5) { animation-delay: 0.4s; }
+
+        .loading-subtext {
+            font-family: "PingFang Heavy", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-size: 14px;
+            color: hsl(var(--muted-foreground));
+            text-align: center;
+            margin-bottom: 20px;
+            max-width: 300px;
+            line-height: 1.5;
+        }
+
+        .loading-progress {
+            width: 200px;
+            height: 4px;
+            background: hsl(var(--border));
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
+            border-radius: 2px;
+            animation: loading-progress 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        .loading-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.4), transparent);
+            animation: loading-progress-shine 2s ease-in-out infinite;
+        }
+
+        @keyframes loading-wave {
+            0%, 100% { 
+                height: 20px;
+                transform: translateY(0);
+            }
+            50% { 
+                height: 40px;
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes loading-progress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes loading-progress-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @media (max-width: 768px) {
+            .loading-wave {
+                width: 4px;
+                height: 16px;
+            }
+            
+            .loading-subtext {
+                font-size: 12px;
+                max-width: 250px;
+            }
+            
+            .loading-progress {
+                width: 150px;
+            }
+        }
+
+        /* SVG图标样式 */
+        .icon {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            vertical-align: middle;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+        }
+
+        .icon-lg {
+            width: 1.5em;
+            height: 1.5em;
+        }
+
+        .icon-xl {
+            width: 2em;
+            height: 2em;
+        }
+
+        /* 加载阶段关闭按钮：仅在 player-loading 显示期间可见，
+           VideoPlayer.ts renderHTML() 会用 #closeBtn 替换掉此节点 */
+        .window-close-btn {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: none;
+            background: hsl(var(--secondary));
+            color: hsl(var(--foreground));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            -webkit-app-region: no-drag;
+            transition: background 0.15s ease, transform 0.15s ease;
+        }
+
+        .window-close-btn:hover {
+            background: hsl(var(--destructive));
+            color: hsl(var(--destructive-foreground));
+            transform: scale(1.05);
+        }
+
+        .window-close-btn .icon {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container" id="playerContainer">
+        <div class="window-close-btn" onclick="window.close()" title="关闭">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <div class="player-loading active">      
+            <div class="loading-wave-container">
+                <div class="loading-wave"></div>
+                <div class="loading-wave"></div>
+                <div class="loading-wave"></div>
+                <div class="loading-wave"></div>
+                <div class="loading-wave"></div>
+            </div>
+            <div class="loading-subtext">请稍等，正在准备最佳播放体验</div>            
+            <div class="loading-progress">
+                <div class="loading-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./player/hls.min.js"></script>
+    <script src="./player/kampos.umd.js"></script>
+    <!-- 播放器脚本将通过构建钩子动态注入 -->
+    <script src="./assets/js/player/player-Cr6vB1u0.js"></script>
+</body>
+</html>

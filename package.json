@@ -1,0 +1,86 @@
+{
+  "name": "imedia-video",
+  "version": "1.0.0",
+  "description": "影视岛 - 专注于影视资源分享的桌面客户端",
+  "license": "MIT",
+  "main": "main/main.js",
+  "author": "imedia-video",
+  "scripts": {
+    "dev": "chcp 65001 > nul && electron .",
+    "build": "electron-builder --win",
+    "build:dir": "electron-builder --win --dir",
+    "build:all": "cd .. && npm run build && cd e && electron-builder --win"
+  },
+  "dependencies": {
+    "async": "^3.2.6",
+    "axios": "^1.3.4",
+    "cheerio": "1.0.0-rc.12",
+    "fluent-ffmpeg": "^2.1.3",
+    "fs-extra": "^11.3.3",
+    "hls.js": "^1.6.15",
+    "kampos": "^0.16.0",
+    "m3u8-parser": "^7.2.0",
+    "mux.js": "^6.3.0",
+    "undici": "^5.28.4",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "com.Imedia.video",
+    "productName": "影视岛",
+    "copyright": "Copyright © 2026 imedia-video",
+    "directories": {
+      "output": "../dist",
+      "buildResources": "view/icons"
+    },
+    "files": [
+      "main/**/*",
+      "view/**/*",
+      "storage/videoApp/sources.json",
+      "storage/videoApp/settings.json",
+      "package.json"
+    ],
+    "win": {
+      "icon": "view/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "${productName}-${version}-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "installerIcon": "view/icons/icon.ico",
+      "uninstallerIcon": "view/icons/icon.ico",
+      "installerHeaderIcon": "view/icons/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "影视岛",
+      "artifactName": "${productName}-${version}-Setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-Portable.${ext}"
+    },
+    "asar": true,
+    "asarUnpack": [
+      "main/ffmpeg/**/*",
+      "view/player/**/*",
+      "view/css/**/*",
+      "view/fonts/**/*",
+      "view/audio/**/*",
+      "view/icons/**/*",
+      "view/images/**/*"
+    ]
+  }
+}

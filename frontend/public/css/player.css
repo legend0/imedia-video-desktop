@@ -1,0 +1,1756 @@
+/* 播放器样式 - 基于Shadcn/UI设计系统 */
+
+/* CSS变量定义 */
+:root {
+  --background: 0 0% 7%;
+  --foreground: 0 0% 95%;
+  --card: 0 0% 9%;
+  --card-foreground: 0 0% 95%;
+  --popover: 0 0% 9%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 346 77% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 95%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 346 77% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 346 77% 50%;
+  --radius: 0.75rem;
+}
+
+/* 全局字体定义 - 使用 PingFangHeavy.ttf */
+@font-face {
+  font-family: "PingFang Heavy";
+  src: url("../fonts/PingFangHeavy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 重置 body 和 html 样式，避免影响播放器显示 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "PingFang Heavy", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 播放器容器 */
+.player-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(var(--background));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 0;
+    color: hsl(var(--foreground));
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.player-container.show {
+    opacity: 1;
+}
+
+/* 顶部标题栏 */
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: linear-gradient(to bottom, hsl(var(--background) / 0.8), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 23;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    -webkit-app-region: drag;
+}
+
+.player-header.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.header-left {
+    flex: 1;
+    min-width: 0;
+    -webkit-app-region: drag;
+}
+
+.video-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-app-region: drag;
+}
+
+.video-subtitle {
+    font-size: 14px;
+    color: hsl(var(--muted-foreground));
+    margin: 4px 0 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-app-region: drag;
+}
+
+.header-right {
+    display: flex;
+    gap: 8px;
+    -webkit-app-region: no-drag;
+}
+
+.window-control {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    -webkit-app-region: no-drag;
+}
+
+.window-control:hover {
+    background: hsl(var(--secondary) / 0.8);
+    transform: scale(1.05);
+}
+
+.window-control.close:hover {
+    background: hsl(var(--destructive));
+}
+
+/* 视频播放区域 */
+.video-area {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(var(--background));
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+.iframe-player {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: hsl(var(--background));
+}
+
+/* iframe 加载时的封面图 */
+.iframe-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #000;
+}
+
+.iframe-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 中间播放按钮 */
+.center-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: hsl(var(--primary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 22;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.15s ease, background-color 0.15s ease;
+    box-shadow: 0 8px 24px hsl(var(--primary) / 0.4);
+}
+
+.center-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: hsl(var(--primary) / 0.9);
+}
+
+.center-play-btn svg {
+    width: 32px;
+    height: 32px;
+    color: hsl(var(--primary-foreground));
+    margin-left: 4px;
+}
+
+.video-area:hover .center-play-btn {
+    opacity: 1;
+}
+
+/* 加载和错误状态 */
+.loading-overlay,
+.error-overlay {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, hsl(var(--background) / 0.6) 0%, transparent 70%);
+    color: hsl(var(--foreground));
+    z-index: 5;
+    -webkit-app-region: drag;
+}
+
+/* 现代化加载动画：三点脉冲波浪 */
+.loading-spinner {
+    width: 56px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    animation: none;
+    position: relative;
+}
+
+.loading-spinner::before,
+.loading-spinner::after,
+.loading-spinner > span {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 12px hsl(var(--primary) / 0.6);
+    animation: loadingPulse 1.2s ease-in-out infinite;
+}
+
+.loading-spinner::before {
+    animation-delay: 0s;
+}
+
+.loading-spinner > span {
+    animation-delay: 0.2s;
+}
+
+.loading-spinner::after {
+    animation-delay: 0.4s;
+}
+
+@keyframes loadingPulse {
+    0%, 80%, 100% {
+        transform: scale(0.5);
+        opacity: 0.4;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text,
+.error-text {
+    font-size: 14px;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 16px;
+}
+
+.error-icon {
+    width: 48px;
+    height: 48px;
+    color: hsl(var(--destructive));
+    margin-bottom: 16px;
+}
+
+.retry-btn {
+    padding: 8px 24px;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.retry-btn:hover {
+    background-color: hsl(var(--primary) / 0.9);
+    transform: scale(1.02);
+}
+
+/* 底部控制栏 */
+.player-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, hsl(var(--background) / 0.9), transparent);
+    padding: 16px;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    -webkit-app-region: no-drag;
+}
+
+.player-controls.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 进度条 */
+.progress-container {
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    position: relative;
+    height: 4px;
+    background-color: hsl(var(--border));
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar:hover {
+    height: 8px;
+}
+
+.progress-loaded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: hsl(var(--muted));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.progress-played {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(to right, hsl(var(--primary) / 0.85), hsl(var(--primary)));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px hsl(var(--primary) / 0.4);
+}
+
+.progress-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+    width: 0%;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.progress-bar:hover .progress-hover {
+    opacity: 1;
+}
+
+.progress-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 16px;
+    height: 16px;
+    background-color: hsl(var(--primary));
+    border: 2px solid hsl(var(--primary-foreground));
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 2px 12px hsl(var(--primary) / 0.6);
+}
+
+.progress-bar:hover .progress-handle {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.progress-bar:hover .progress-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.progress-time {
+    text-align: center;
+    font-size: 12px;
+    color: hsl(var(--muted-foreground));
+}
+
+/* 进度条时间提示框 */
+.progress-time-tooltip {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 4px 12px hsl(var(--background) / 0.3);
+}
+
+.progress-time-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: hsl(var(--popover));
+}
+
+.progress-bar:hover .progress-time-tooltip {
+    opacity: 1;
+}
+
+/* Mini进度条 */
+.mini-progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: hsl(var(--border));
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, height 0.15s ease;
+    z-index: 10;
+}
+
+.mini-progress-container.visible {
+    opacity: 1;
+}
+
+.mini-progress-container:hover {
+    height: 5px;
+}
+
+.mini-progress-loaded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: hsl(var(--muted));
+    width: 0%;
+}
+
+.mini-progress-played {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: hsl(var(--primary));
+    width: 0%;
+}
+
+.mini-progress-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: hsl(var(--primary) / 0.5);
+    width: 0%;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.mini-progress-container:hover .mini-progress-hover {
+    opacity: 1;
+}
+
+/* 控制按钮区 */
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* 消息提示容器 */
+.message-container {
+    position: absolute;
+    left: 0;
+    top: -60px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: hsl(var(--popover));
+    border-radius: 8px;
+    color: hsl(var(--popover-foreground));
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    cursor: pointer;
+    box-shadow: 0 4px 12px hsl(var(--background) / 0.3);
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message:hover {
+    background: hsl(var(--popover) / 0.9);
+}
+
+.message-text {
+    flex: 1;
+}
+
+.message-action {
+    color: hsl(var(--primary));
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+}
+
+.message-action:hover {
+    background: hsl(var(--primary) / 0.2);
+}
+
+.controls-left,
+.controls-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: hsl(var(--foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.control-btn:hover {
+    background: hsl(var(--secondary) / 0.8);
+    transform: scale(1.08);
+    box-shadow: 0 0 16px hsl(var(--primary) / 0.15);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.control-btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.control-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+.control-btn:hover svg {
+    transform: scale(1.05);
+}
+
+.play-pause-btn {
+    width: 48px;
+    height: 48px;
+    background: hsl(var(--primary));
+    border-radius: 50%;
+    box-shadow: 0 4px 16px hsl(var(--primary) / 0.4);
+}
+
+.play-pause-btn:hover {
+    background: hsl(var(--primary) / 0.9);
+    box-shadow: 0 6px 24px hsl(var(--primary) / 0.6);
+    transform: scale(1.08);
+}
+
+.play-pause-btn:active {
+    transform: scale(0.95);
+}
+
+.play-pause-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 音量控制 */
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.volume-slider {
+    width: 0;
+    overflow: visible;
+    transition: width 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--popover));
+    padding: 12px 6px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px hsl(var(--background) / 0.5);
+}
+
+/* 透明桥接区：覆盖滑块与音量按钮之间的间隙，避免鼠标穿越间隙时 :hover 丢失 */
+.volume-slider::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 60px;
+    /* 透明，仅用于维持 hover 状态 */
+}
+
+.volume-container:hover .volume-slider {
+    width: 32px;
+    opacity: 1;
+}
+
+.volume-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 56px;
+    height: 6px;
+    cursor: pointer;
+    background: hsl(var(--border));
+    border-radius: 3px;
+    outline: none;
+    transform: rotate(-90deg);
+}
+
+.volume-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 4px hsl(var(--primary) / 0.4);
+}
+
+.volume-range::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    cursor: pointer;
+    border: none;
+}
+
+/* 时间显示 */
+.time-display {
+    font-size: 13px;
+    color: hsl(var(--muted-foreground));
+    min-width: 100px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 设置面板 */
+.settings-container {
+    position: relative;
+}
+
+.settings-panel {
+    position: absolute;
+    bottom: 56px;
+    right: 0;
+    width: 300px;
+    /* 限制最大高度，超出时内部滚动，避免面板溢出播放器 */
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: hsl(var(--popover));
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: 14px;
+    padding: 14px 16px;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px) scale(0.96);
+    transform-origin: bottom right;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 12px 32px hsl(var(--background) / 0.6);
+}
+
+/* 滚动条样式 */
+.settings-panel::-webkit-scrollbar {
+    width: 6px;
+}
+.settings-panel::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+}
+.settings-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* 透明桥接区：覆盖面板与设置按钮之间的 56px 间隙，避免鼠标穿越时 mouseleave 触发导致面板消失 */
+.settings-panel::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 48px;
+    height: 56px;
+    /* 透明，仅用于维持 mouseenter/hover 状态 */
+}
+
+.settings-panel.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.settings-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid hsl(var(--border));
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    position: sticky;
+    top: -14px;
+    background: hsl(var(--popover));
+    z-index: 1;
+    margin-top: -2px;
+    padding-top: 2px;
+}
+
+.settings-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: hsl(var(--popover-foreground));
+}
+
+.settings-close-btn {
+    background: transparent;
+    border: none;
+    color: hsl(var(--muted-foreground));
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.settings-close-btn:hover {
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+}
+
+.settings-section {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid hsl(var(--border) / 0.3);
+}
+
+.settings-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.settings-section-title {
+    font-size: 11px;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* 分段选择按钮组：替代下拉选择，更直观紧凑 */
+.segment-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.segment-pill {
+    padding: 5px 10px;
+    background: hsl(var(--secondary));
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: 8px;
+    color: hsl(var(--muted-foreground));
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.segment-pill:hover {
+    border-color: hsl(var(--primary) / 0.5);
+    color: hsl(var(--foreground));
+}
+
+.segment-pill.active {
+    background: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 2px 8px hsl(var(--primary) / 0.3);
+}
+
+.settings-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.settings-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-input-group label {
+    font-size: 14px;
+    color: hsl(var(--foreground));
+    min-width: 80px;
+}
+
+.settings-input {
+    flex: 1;
+    min-width: 0;
+    background: hsl(var(--secondary));
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.15s ease;
+}
+
+.settings-input:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+}
+
+/* 自定义画面比例输入组 */
+.custom-ratio-group {
+    display: flex;
+    align-items: center;
+}
+
+.custom-ratio-group .settings-input::-webkit-inner-spin-button,
+.custom-ratio-group .settings-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* 剧集列表面板 */
+.playlist-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 240px;
+    background-color: hsl(var(--card));
+    box-shadow: -8px 0 24px hsl(var(--background) / 0.5);
+    z-index: 50;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    /* 仅过渡动画属性，避免 visibility/box-shadow 等离散或额外属性参与导致重绘抖动 */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    -webkit-app-region: no-drag;
+}
+
+.playlist-panel.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+}
+
+.playlist-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: hsl(var(--card-foreground));
+}
+
+.playlist-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.playlist-close-btn:hover {
+    background: hsl(var(--destructive));
+    transform: rotate(90deg);
+}
+
+/* 播放格式选项卡 */
+.playlist-tabs {
+    display: flex;
+    padding: 0 16px;
+    border-bottom: 1px solid hsl(var(--border));
+    background: hsl(var(--card) / 0.5);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.playlist-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.playlist-tab {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+    position: relative;
+}
+
+.playlist-tab:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--secondary) / 0.5);
+}
+
+.playlist-tab.active {
+    color: hsl(var(--primary));
+    border-bottom-color: hsl(var(--primary));
+}
+
+.playlist-tab .badge {
+    position: absolute;
+    top: 6px;
+    right: 0px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1;
+}
+
+.playlist-content {
+    padding: 12px;
+    overflow-y: auto;
+    height: calc(100% - 120px);
+}
+
+.playlist-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playlist-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.playlist-content::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+}
+
+.playlist-content::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted));
+}
+
+/* 剧集项样式 */
+.episode-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-bottom: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.episode-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: transparent;
+    transition: background 0.15s ease;
+    border-radius: 3px;
+}
+
+.episode-item:hover {
+    background-color: hsl(var(--secondary));
+    transform: translateX(-2px);
+}
+
+.episode-item:hover::before {
+    background: hsl(var(--primary));
+}
+
+.episode-item.active {
+    background: hsl(var(--primary) / 0.15);
+    border: 1px solid hsl(var(--primary) / 0.3);
+}
+
+.episode-item.active::before {
+    background: hsl(var(--primary));
+}
+
+.episode-item.active .episode-title {
+    color: hsl(var(--primary));
+    font-weight: 600;
+}
+
+.episode-item.active .episode-index {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.episode-index {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 6px;
+    background: hsl(var(--secondary));
+    color: hsl(var(--muted-foreground));
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.episode-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.episode-title {
+    font-size: 14px;
+    color: hsl(var(--foreground));
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.episode-duration {
+    font-size: 12px;
+    color: hsl(var(--muted-foreground));
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.episode-duration::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--muted-foreground));
+    opacity: 0.5;
+}
+
+.episode-item.active .episode-duration::before {
+    background: hsl(var(--primary));
+    opacity: 1;
+}
+
+.no-episodes {
+    text-align: center;
+    padding: 32px;
+    color: hsl(var(--muted-foreground));
+    font-size: 14px;
+}
+
+.no-episodes svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+/* 右键菜单样式 */
+.context-menu {
+    position: fixed;
+    background: hsl(var(--popover));
+    border-radius: 8px;
+    box-shadow: 0 8px 24px hsl(var(--background) / 0.5);
+    min-width: 200px;
+    z-index: 1000;
+    padding: 4px 0;
+    border: 1px solid hsl(var(--border));
+}
+
+.context-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    color: hsl(var(--popover-foreground));
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.context-menu-item:hover {
+    background: hsl(var(--secondary));
+}
+
+.context-menu-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.context-menu-item.disabled:hover {
+    background: transparent;
+}
+
+/* Modal样式 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsl(var(--background) / 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: hsl(var(--card));
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px hsl(var(--background) / 0.5);
+    animation: slideUp 0.2s ease;
+    -webkit-app-region: no-drag;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: hsl(var(--card-foreground));
+}
+
+.modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.modal-close-btn:hover {
+    background: hsl(var(--secondary) / 0.8);
+}
+
+.modal-body {
+    padding: 24px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* 视频信息样式 */
+.video-info-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.video-info-section:last-child {
+    border-bottom: none;
+}
+
+.video-info-label {
+    color: hsl(var(--muted-foreground));
+    font-size: 14px;
+}
+
+.video-info-value {
+    color: hsl(var(--foreground));
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.kampos-canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+
+/* 画质增强面板 */
+.enhance-modal-content {
+    max-width: 420px;
+}
+
+.enhance-modal-body {
+    padding: 16px 24px;
+}
+
+.enhance-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.enhance-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.enhance-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 80px;
+    color: hsl(var(--muted-foreground));
+    font-size: 14px;
+}
+
+.enhance-label svg {
+    width: 16px;
+    height: 16px;
+    color: hsl(var(--primary));
+}
+
+.enhance-slider-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.enhance-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: hsl(var(--border));
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.enhance-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.enhance-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.enhance-value {
+    min-width: 40px;
+    text-align: right;
+    color: hsl(var(--foreground));
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.enhance-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid hsl(var(--border));
+}
+
+.enhance-btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.enhance-btn-reset {
+    background: hsl(var(--secondary));
+    color: hsl(var(--muted-foreground));
+}
+
+.enhance-btn-reset:hover {
+    background: hsl(var(--secondary) / 0.8);
+    color: hsl(var(--foreground));
+}
+
+.enhance-btn-toggle {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.enhance-btn-toggle:hover {
+    opacity: 0.9;
+}
+
+.enhance-btn-toggle.active {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary));
+}
+
+/* 播放信息面板 */
+.playback-info-panel {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 340px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 32px);
+    background: hsl(var(--popover));
+    border-radius: 12px;
+    box-shadow: 0 8px 24px hsl(var(--background) / 0.5);
+    z-index: 1000;
+    border: 1px solid hsl(var(--border));
+    animation: slideInRight 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.playback-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid hsl(var(--border));
+    flex-shrink: 0;
+}
+
+.playback-info-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: hsl(var(--popover-foreground));
+}
+
+.playback-info-close-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: none;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.playback-info-close-btn:hover {
+    background: hsl(var(--secondary) / 0.8);
+}
+
+.playback-info-body {
+    padding: 14px 16px;
+    max-height: 60vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    flex: 1;
+}
+
+.playback-info-body::-webkit-scrollbar {
+    width: 6px;
+}
+.playback-info-body::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+}
+.playback-info-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* 信息分组标题 */
+.playback-info-group-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: hsl(var(--muted-foreground));
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 12px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid hsl(var(--border) / 0.3);
+}
+
+.playback-info-group-title:first-child {
+    margin-top: 0;
+}
+
+.playback-info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.playback-info-section:last-child {
+    margin-bottom: 0;
+}
+
+.playback-info-label {
+    color: hsl(var(--muted-foreground));
+    flex-shrink: 0;
+    min-width: 70px;
+    margin-right: 12px;
+}
+
+.playback-info-value {
+    color: hsl(var(--popover-foreground));
+    text-align: right;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    flex: 1;
+}
+
+/* 单行截断（用于短文本字段） */
+.playback-info-value-single {
+    -webkit-line-clamp: 1;
+    white-space: nowrap;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .player-header {
+        padding: 12px 16px;
+    }
+    
+    .video-title {
+        font-size: 16px;
+    }
+    
+    .player-controls {
+        padding: 12px;
+    }
+    
+    .controls-left,
+    .controls-right {
+        gap: 8px;
+    }
+    
+    .control-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .play-pause-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .time-display {
+        font-size: 12px;
+        min-width: 80px;
+    }
+    
+    .settings-panel {
+        width: 240px;
+        padding: 12px;
+        max-height: calc(100vh - 140px);
+    }
+
+    .playlist-panel {
+        width: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-header {
+        padding: 8px 12px;
+    }
+
+    .video-title {
+        font-size: 14px;
+    }
+
+    .player-controls {
+        padding: 8px;
+    }
+
+    .controls-left,
+    .controls-right {
+        gap: 4px;
+    }
+
+    .control-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .play-pause-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .time-display {
+        display: none;
+    }
+
+    .settings-panel {
+        width: 220px;
+        right: -40px;
+        max-height: calc(100vh - 120px);
+    }
+
+    .playlist-panel {
+        width: 220px;
+    }
+}
+
+/* ===== 直播（live）模式 ===== */
+
+/* live 指示器：红色脉冲圆点 + "直播" 文字 */
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: hsl(0 84% 50% / 0.15);
+    border: 1px solid hsl(0 84% 50% / 0.4);
+    user-select: none;
+}
+
+.live-indicator .live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(0 84% 50%);
+    box-shadow: 0 0 6px hsl(0 84% 50% / 0.8);
+    animation: live-pulse 1.5s ease-in-out infinite;
+}
+
+.live-indicator .live-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: hsl(0 84% 60%);
+    letter-spacing: 0.5px;
+}
+
+@keyframes live-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+/* live 模式下隐藏控制栏左侧的上一集/下一集/时间显示，保留播放/暂停 + live 指示 + 音量 */
+.live-mode .controls-left .prev-btn,
+.live-mode .controls-left .next-btn,
+.live-mode .controls-left .time-display {
+    display: none !important;
+}
+
+/* live 模式下隐藏进度条容器（已在 JS 中设置 display:none，此处作兜底） */
+.live-mode .progress-container {
+    display: none !important;
+}
+
+/* live 模式下隐藏设置按钮（直播流无需播放器设置） */
+.live-mode .settings-container {
+    display: none !important;
+}

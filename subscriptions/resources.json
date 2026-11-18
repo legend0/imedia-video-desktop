@@ -1,0 +1,1460 @@
+{
+  "stats": {
+    "updated_at": "2026-11-17T18:05:56.844Z",
+    "total_sites": 67,
+    "success_sites": 42,
+    "media_sites": 25,
+    "adult_sites": 17,
+    "failed_sites": 25,
+    "skipped_by_section": 30,
+    "status_breakdown": {
+      "success": 42,
+      "blocked": 1,
+      "timeout": 2,
+      "not_found": 9,
+      "error": 13,
+      "skipped": 0
+    }
+  },
+  "media": [
+    {
+      "name": "芒果资源",
+      "url": "https://mgzy1.tv",
+      "description": "6IqS5p6c5b2x6KeG6LWE5rqQ77yM5pKt5pS+5Zyw5Z2A5Li65Zu95aSWY2Ru77yM5pqC5peg5bm/5ZGK77yM5q+P5pel5pu05paw77yM5YW35L2T5pKt5pS+6YCf5bqm6Ieq5rWL",
+      "category": "media",
+      "api_domain": "https://mgzy1.tv",
+      "api_json": "https://mgzy1.tv/api.php/provide/vod/",
+      "api_xml": "https://mgzy1.tv/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:15.245Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 443,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:15.689Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 409,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:16.099Z"
+        }
+      }
+    },
+    {
+      "name": "吉吉资源",
+      "url": "https://jjzy.tv",
+      "description": "5ZCJ5ZCJ6LWE5rqQ5b2x6KeG6YeH6ZuG77yM5q+P5pel5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So6aaZ5rivQ0RO57q/6Lev77yM5pyq5Y+R546w5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://jjzy.tv",
+      "api_json": "https://jjzy.tv/api.php/provide/vod/",
+      "api_xml": "https://jjzy.tv/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:19.219Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 388,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:19.608Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 340,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:19.949Z"
+        }
+      }
+    },
+    {
+      "name": "樱花资源",
+      "url": "https://yhzy.cc",
+      "description": "5qix6Iqx6LWE5rqQ5b2x6KeG6YeH6ZuG77yM5q+P5pel5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So5Zu95aSWQ0RO57q/6Lev77yM5pyJ5o+S5pKt5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm",
+      "category": "media",
+      "api_domain": "https://yhzy.cc",
+      "api_json": "https://yhzy.cc/api.php/provide/vod/",
+      "api_xml": "https://yhzy.cc/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:22.179Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 305,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:22.484Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 310,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:22.795Z"
+        }
+      }
+    },
+    {
+      "name": "厂长资源",
+      "url": "https://changzhang.tv",
+      "description": "5Y6C6ZW/6LWE5rqQ5b2x6KeG6YeH6ZuG77yM5q+P5pel5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So5Zu95aSWQ0RO57q/6Lev77yM5pyq5Y+R546w5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://changzhang.tv",
+      "api_json": "https://changzhang.tv/api.php/provide/vod/",
+      "api_xml": "https://changzhang.tv/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:32.102Z",
+      "test": {
+        "json": {
+          "status": 200,
+          "response_time": 404,
+          "available": true,
+          "response_type": "json",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:32.506Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 610,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:33.116Z"
+        }
+      }
+    },
+    {
+      "name": "母鸡资源",
+      "url": "https://mujiziyuan01.com",
+      "description": "5q+N6bih6LWE5rqQ5b2x6KeG6YeH6ZuG77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A55So55qE5Zu95aSWY2Ru77yM5pqC5pyq5Y+R546w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://mujiziyuan01.com",
+      "api_json": "https://mujiziyuan01.com/api.php/provide/vod/",
+      "api_xml": null,
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:36.549Z",
+      "test": {
+        "json": {
+          "status": 200,
+          "response_time": 437,
+          "available": true,
+          "response_type": "json",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:36.986Z"
+        }
+      }
+    },
+    {
+      "name": "天涯资源",
+      "url": "https://tyyszy.com",
+      "description": "5aSp5rav6LWE5rqQ6YeH6ZuG77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A55So55qE576O5Zu9Y2Ru77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC5q2k6LWE5rqQ56uZ5bGP6JS95rW35aSW5pKt5pS+44CC",
+      "category": "media",
+      "api_domain": "https://tyyszy.com",
+      "api_json": "https://tyyszy.com/api.php/provide/vod/",
+      "api_xml": "https://tyyszy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:39.690Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 464,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:40.154Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 470,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:40.624Z"
+        }
+      }
+    },
+    {
+      "name": "360资源",
+      "url": "https://360zy.com",
+      "description": "MzYw6LWE5rqQ6YeH6ZuG77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A55So55qE5Zu95YaFY2Ru77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://360zy.com",
+      "api_json": "https://360zy.com/api.php/provide/vod/",
+      "api_xml": "https://360zy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:43.557Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 410,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:43.967Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 420,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:44.387Z"
+        }
+      }
+    },
+    {
+      "name": "最大资源",
+      "url": "https://zuidazy.co",
+      "description": "5pyA5aSn6LWE5rqQ5b2x6KeG6LWE5rqQ6YeH6ZuG56uZ77yM5pKt5pS+57q/6Lev5Li6576O5Zu9aXDvvIzmmoLmnKrlj5HnjrDlub/lkYrvvIzmr4/ml6Xpg73mnInmm7TmlrDjgII=",
+      "category": "media",
+      "api_domain": "https://zuidazy.co",
+      "api_json": "https://zuidazy.co/api.php/provide/vod/",
+      "api_xml": "https://zuidazy.co/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:47.521Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 601,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:48.122Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 556,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:48.678Z"
+        }
+      }
+    },
+    {
+      "name": "ok资源站",
+      "url": "https://okzyw.cc",
+      "description": "b2votYTmupDlvbHop4botYTmupDph4fpm4bnq5nvvIzmkq3mlL7nur/ot6/kuLrnvo7lm71jZG7vvIzmmoLmnKrlj5HnjrDlub/lkYrvvIzmr4/ml6Xmm7TmlrDotYTmupDjgII=",
+      "category": "media",
+      "api_domain": "https://okzyw.cc",
+      "api_json": "https://okzyw.cc/api.php/provide/vod/",
+      "api_xml": "https://okzyw.cc/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:51.350Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 417,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:51.769Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 679,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:52.449Z"
+        }
+      }
+    },
+    {
+      "name": "西瓜资源",
+      "url": "https://xiguazy.tv",
+      "description": "6KW/55Oc6LWE5rqQ6YeH6ZuG77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So5Zu95aSW77yIY2xvdWRmbGFyZe+8iee6v+i3r++8jOaaguacquWPkeeOsOawtOWNsOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAgg==",
+      "category": "media",
+      "api_domain": "https://xiguazy.tv",
+      "api_json": "https://xiguazy.tv/api.php/provide/vod/",
+      "api_xml": "https://xiguazy.tv/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:54.752Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 203,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:00:54.956Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 206,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:00:55.163Z"
+        }
+      }
+    },
+    {
+      "name": "无水印资源",
+      "url": "https://www.wsyzy.cc",
+      "description": "5peg5rC05Y2w5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrnvo7lm71jZG4s6KeG6aKR5pyJ5rC05Y2w5bm/5ZGKLOmAn+W6puiHqua1iw==",
+      "category": "media",
+      "api_domain": "https://www.wsyzy.cc",
+      "api_json": "https://www.wsyzy.cc/api.php/provide/vod/",
+      "api_xml": "https://www.wsyzy.cc/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:00:59.667Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 469,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:01:00.136Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 485,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:01:00.621Z"
+        }
+      }
+    },
+    {
+      "name": "非凡资源",
+      "url": "https://ffzy5.tv",
+      "description": "6Z2e5Yeh5b2x6KeG6LWE5rqQ6YeH6ZuG56uZ77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A576O5Zu9Y2Ru77yM5pqC5pyq5Y+R546w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://ffzy5.tv",
+      "api_json": "https://ffzy5.tv/api.php/provide/vod/",
+      "api_xml": "https://ffzy5.tv/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:01:03.411Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 188,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:01:03.599Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 185,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:01:03.786Z"
+        }
+      }
+    },
+    {
+      "name": "爱奇艺影视",
+      "url": "https://iqiyizy.com",
+      "description": "54ix5aWH6Im65b2x6KeG6LWE5rqQ6YeH6ZuG56uZ77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So576O5Zu9Y2Ru77yM5pyJ5rC05Y2w5o+S5pKt5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://iqiyizy.com",
+      "api_json": "https://iqiyizy.com/api.php/provide/vod/",
+      "api_xml": "https://iqiyizy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:01:06.368Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 486,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:01:06.854Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 488,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:01:07.342Z"
+        }
+      }
+    },
+    {
+      "name": "牛牛资源",
+      "url": "https://niuniuzy.cc",
+      "description": "54mb54mb5b2x6KeG6LWE5rqQ6YeH6ZuG56uZ77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So5ZCX77yM576O5Zu957q/6Lev77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://api.niuniuzy.me",
+      "api_json": "https://api.niuniuzy.me/api.php/provide/vod/",
+      "api_xml": "https://api.niuniuzy.me/api.php/provide/vod/at/xml",
+      "api_source": "help_page",
+      "checked_at": "2026-11-17T18:01:14.033Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 461,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:01:14.495Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 458,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:01:14.954Z"
+        }
+      }
+    },
+    {
+      "name": "鸭鸭资源",
+      "url": "https://yayazy.com",
+      "description": "6bit6bit5b2x6KeG6LWE5rqQ6YeH6ZuG56uZ77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So576O5Zu9Y2Ru77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "https://cj.yayazy.net",
+      "api_json": "https://cj.yayazy.net/api.php/provide/vod/",
+      "api_xml": "https://cj.yayazy.net/api.php/provide/vod/at/xml",
+      "api_source": "help_page",
+      "checked_at": "2026-11-17T18:01:27.638Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 657,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:01:28.295Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 495,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:01:28.790Z"
+        }
+      }
+    },
+    {
+      "name": "猫眼资源",
+      "url": "https://www.maoyanzy.com",
+      "description": "54yr55y86LWE5rqQ6YeH6ZuG56uZ77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So6Z+p5Zu9aXDvvIzmmoLml6Dlj5HnjrDmsLTljbDlub/lkYrvvIzor7fmgqjoh6rooYzmtYvor5Xmkq3mlL7pgJ/luqbjgII=",
+      "category": "media",
+      "api_domain": "https://www.maoyanzy.com",
+      "api_json": "https://www.maoyanzy.com/api.php/provide/vod/",
+      "api_xml": "https://www.maoyanzy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:01:31.517Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 402,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:01:31.919Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 394,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:01:32.313Z"
+        }
+      }
+    },
+    {
+      "name": "电影天堂资源",
+      "url": "http://dyttzy.tv",
+      "description": "55S15b2x5aSp5aCC6LWE5rqQ6YeH6ZuG56uZ77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So5Zu95aSW57q/6Lev77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+35oKo6Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "api_domain": "http://dyttzy.tv",
+      "api_json": "http://dyttzy.tv/api.php/provide/vod/",
+      "api_xml": "http://dyttzy.tv/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:01:40.782Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 734,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:01:41.516Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 694,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:01:42.210Z"
+        }
+      }
+    },
+    {
+      "name": "索尼资源",
+      "url": "https://suonizy.com",
+      "description": "57Si5bC85b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrnvo7lm71pcCzop4bpopHmnInmsLTljbDlub/lkYos6YCf5bqm6Ieq5rWLLOeJueauiui1hOa6kOWMheaLrCjlvbHop4bop6Por7Qs5L2T6IKyKSzop4bpopHlsY/olL3nvo7lm70s5qyn5rSy57q/6Lev5pKt5pS+",
+      "category": "media",
+      "api_domain": "https://suonizy.com",
+      "api_json": "https://suonizy.com/api.php/provide/vod/",
+      "api_xml": "https://suonizy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:02:03.530Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 481,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:02:04.011Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 499,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:02:04.511Z"
+        }
+      }
+    },
+    {
+      "name": "极速资源",
+      "url": "http://www.jisuzy.com",
+      "description": "5p6B6YCf5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrlm73lpJZjZG4s6KeG6aKR5pyJ5rC05Y2w5bm/5ZGKLOmAn+W6puiHqua1iyznibnmrorotYTmupDljIXmi6wo55+t5YmnKQ==",
+      "category": "media",
+      "api_domain": "http://www.jisuzy.com",
+      "api_json": "http://www.jisuzy.com/api.php/provide/vod/",
+      "api_xml": "http://www.jisuzy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:02:15.102Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 1365,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:02:16.467Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 1206,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:02:17.674Z"
+        }
+      }
+    },
+    {
+      "name": "暴风资源",
+      "url": "https://bfzy2.tv",
+      "description": "5pq06aOO5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrnvo7lm71jZG4s6KeG6aKR5pyJ5rC05Y2w5bm/5ZGKLOmAn+W6puiHqua1iw==",
+      "category": "media",
+      "api_domain": "https://bfzy2.tv",
+      "api_json": "https://bfzy2.tv/api.php/provide/vod/",
+      "api_xml": "https://bfzy2.tv/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:02:27.211Z",
+      "test": {
+        "json": {
+          "status": 200,
+          "response_time": 1067,
+          "available": true,
+          "response_type": "json",
+          "error": null,
+          "tested_at": "2026-11-17T18:02:28.279Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 1122,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:02:29.401Z"
+        }
+      }
+    },
+    {
+      "name": "豪华资源",
+      "url": "https://haohuazy.com",
+      "description": "6LGq5Y2O5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrlm73lpJZjZG4s6KeG6aKR5pyJ5rC05Y2w5bm/5ZGKLOmAn+W6puiHqua1iyznibnmrorotYTmupDljIXmi6wo55+t5YmnKQ==",
+      "category": "media",
+      "api_domain": "https://haohuazy.com",
+      "api_json": "https://haohuazy.com/api.php/provide/vod/",
+      "api_xml": "https://haohuazy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:02:32.740Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 437,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:02:33.178Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 728,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:02:33.906Z"
+        }
+      }
+    },
+    {
+      "name": "快车资源",
+      "url": "https://kuaichezy.com",
+      "description": "5b+r6L2m5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrnvo7lm71pcCzop4bpopHmnInmsLTljbDlub/lkYos6YCf5bqm6Ieq5rWLLOeJueauiui1hOa6kOWMheaLrCjnn63liacs5L2T6IKyKQ==",
+      "category": "media",
+      "api_domain": "https://kuaichezy.com",
+      "api_json": "https://kuaichezy.com/api.php/provide/vod/",
+      "api_xml": "https://kuaichezy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:02:37.399Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 513,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:02:37.912Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 499,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:02:38.411Z"
+        }
+      }
+    },
+    {
+      "name": "速播资源",
+      "url": "http://www.suboziyuan.net",
+      "description": "6YCf5pKt5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrpn6nlm71pcCzop4bpopHmnInmsLTljbDlub/lkYos6YCf5bqm6Ieq5rWLLOeJueauiui1hOa6kOWMheaLrCjnn63liacp",
+      "category": "media",
+      "api_domain": "https://subocj.com",
+      "api_json": "https://subocj.com/api.php/provide/vod/",
+      "api_xml": "https://subocj.com/api.php/provide/vod/at/xml",
+      "api_source": "help_page",
+      "checked_at": "2026-11-17T18:02:53.259Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 1607,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:02:54.867Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 805,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:02:55.672Z"
+        }
+      }
+    },
+    {
+      "name": "光速资源",
+      "url": "https://guangsuzy.com",
+      "description": "5YWJ6YCf5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOaSreaUvuWcsOWdgOS4uuWbveWklizmnInmsLTljbDlub/lkYos6YCf5bqm6Ieq5rWL",
+      "category": "media",
+      "api_domain": "https://api.guangsuapi.com",
+      "api_json": "https://api.guangsuapi.com/api.php/provide/vod/",
+      "api_xml": "https://api.guangsuapi.com/api.php/provide/vod/at/xml",
+      "api_source": "help_page",
+      "checked_at": "2026-11-17T18:03:11.933Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 252,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:03:12.185Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 256,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:03:12.441Z"
+        }
+      }
+    },
+    {
+      "name": "金鹰资源",
+      "url": "https://jinyingzy.com",
+      "description": "6YeR6bmw5b2x6KeG6LWE5rqQ77yM5pKt5pS+5Zyw5Z2A5Li65Zu95YaFY2Ru77yM5pyJ5rC05Y2w5bm/5ZGK77yM5q+P5pel5pu05paw77yM5YW35L2T5pKt5pS+6YCf5bqm6Ieq5rWL",
+      "category": "media",
+      "api_domain": "https://jinyingzy.com",
+      "api_json": "https://jinyingzy.com/api.php/provide/vod/",
+      "api_xml": "https://jinyingzy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:03:37.844Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 447,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:03:38.291Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 712,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:03:39.003Z"
+        }
+      }
+    }
+  ],
+  "adult": [
+    {
+      "name": "极品资源",
+      "url": "https://jipinvip.com",
+      "description": "5p6B5ZOBeOermei1hOa6kOmHh+mbhuerme+8jOavj+aXpemDveacieabtOaWsOWGheWuueOAguinhumikeaSreaUvuWcsOWdgOmHh+eUqGNsb3VkZmxhcmVDRE7vvIzmnInmsLTljbDlub/lkYrvvIzor7foh6rooYzmtYvor5Xmkq3mlL7pgJ/luqbjgII=",
+      "category": "adult",
+      "api_domain": "https://jipinvip.com",
+      "api_json": "https://jipinvip.com/api.php/provide/vod/",
+      "api_xml": "https://jipinvip.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:03:43.044Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 608,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:03:43.652Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 608,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:03:44.260Z"
+        }
+      }
+    },
+    {
+      "name": "精品98",
+      "url": "https://jp98.vip",
+      "description": "57K+5ZOBOTjmiJDkurrotYTmupDvvIzkvb/nlKjlm73lpJZpcOS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOaciWFp55+t5Ymn6LWE5rqQ77yM5pqC5peg5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC5q+P5pel5pu05paw44CC",
+      "category": "adult",
+      "api_domain": "https://jp98.vip",
+      "api_json": "https://jp98.vip/api.php/provide/vod/",
+      "api_xml": "https://jp98.vip/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:03:46.178Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 315,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:03:46.493Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 215,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:03:46.708Z"
+        }
+      }
+    },
+    {
+      "name": "免费资源站",
+      "url": "https://yuanlib.com",
+      "description": "5YWN6LS5WOermei1hOa6kO+8jOS9v+eUqOe+juWbvWlw5L2c5Li65pKt5pS+5rqQ5Zyw5Z2A77yM5pqC5peg5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC5q+P5pel5pu05paw44CC",
+      "category": "adult",
+      "api_domain": "https://yuanlib.com",
+      "api_json": "https://yuanlib.com/api.php/provide/vod/",
+      "api_xml": "https://yuanlib.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:03:51.607Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 424,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:03:52.032Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 447,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:03:52.480Z"
+        }
+      }
+    },
+    {
+      "name": "嘿嘿资源",
+      "url": "https://heiheiziyuan.com",
+      "description": "5Zi/5Zi/WOermei1hOa6kO+8jOS9v+eUqOe+juWbvUNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieaPkuaSreWSjOawtOWNsOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAguavj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "api_domain": "https://heiheiziyuan.com",
+      "api_json": "https://heiheiziyuan.com/api.php/provide/vod/",
+      "api_xml": "https://heiheiziyuan.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:03:56.264Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 962,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:03:57.227Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 655,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:03:57.883Z"
+        }
+      }
+    },
+    {
+      "name": "火速资源",
+      "url": "https://huosuzy.com",
+      "description": "54Gr6YCfWOermei1hOa6kO+8jOS9v+eUqOe+juWbvUNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieaPkuaSreWSjOawtOWNsOW5v+WRiu+8jOatpOi1hOa6kOermeWPquacieS8pueQhui1hOa6kO+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAguavj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "api_domain": "https://huosuzy.com",
+      "api_json": "https://huosuzy.com/api.php/provide/vod/",
+      "api_xml": "https://huosuzy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:04:00.289Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 383,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:04:00.672Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 379,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:04:01.051Z"
+        }
+      }
+    },
+    {
+      "name": "红楼资源",
+      "url": "https://hlzy.my",
+      "description": "57qi5qW8WOermei1hOa6kO+8jOS9v+eUqOWbveWGheesrOS4ieaWueaJmOeuoe+8jOmcgOimgeino+aekOaJjeiDveaSreaUvu+8jOaaguacquWPkeeOsOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAguavj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "api_domain": "https://hlzy.my",
+      "api_json": "https://hlzy.my/api.php/provide/vod/",
+      "api_xml": "https://hlzy.my/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:04:04.098Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 396,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:04:04.495Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 382,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:04:04.877Z"
+        }
+      }
+    },
+    {
+      "name": "番茄资源",
+      "url": "https://fqzy.me",
+      "description": "55Wq6IyEWOermei1hOa6kO+8jOS9v+eUqOe+juWbvUNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieaPkuaSreW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6pu+8jOavj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "api_domain": "https://fqzy.me",
+      "api_json": "https://fqzy.me/api.php/provide/vod/",
+      "api_xml": "https://fqzy.me/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:04:08.365Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 615,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:04:08.980Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 634,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:04:09.614Z"
+        }
+      }
+    },
+    {
+      "name": "黄色仓库",
+      "url": "https://hsckzy001.com",
+      "description": "6buE6Imy5LuT5bqT5oiQ5Lq66LWE5rqQ77yM5L2/55So5Zu95aSWSVDkvZzkuLrmkq3mlL7mupDlnLDlnYDvvIzmnInmj5Lmkq3lub/lkYrvvIzor7foh6rooYzmtYvor5Xmkq3mlL7pgJ/luqbjgILmr4/ml6Xmm7TmlrA=",
+      "category": "adult",
+      "api_domain": "https://hsckzy001.com",
+      "api_json": "https://hsckzy001.com/api.php/provide/vod/",
+      "api_xml": "https://hsckzy001.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:04:15.016Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 373,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:04:15.389Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 354,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:04:15.744Z"
+        }
+      }
+    },
+    {
+      "name": "桃花资源",
+      "url": "https://thzy1.me",
+      "description": "5qGD6IqxWOermei1hOa6kO+8jOS9v+eUqOWbveWklklQ5L2c5Li65pKt5pS+5rqQ5Zyw5Z2A77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC5q+P5pel5pu05paw77yM5pyA5pep55qE6LWE5rqQ5pe26Ze077yaMjAyNC0wNy0wNOOAgg==",
+      "category": "adult",
+      "api_domain": "https://thzy1.me",
+      "api_json": "https://thzy1.me/api.php/provide/vod/",
+      "api_xml": "https://thzy1.me/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:04:35.095Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 652,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:04:35.747Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 641,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:04:36.388Z"
+        }
+      }
+    },
+    {
+      "name": "CK伦理资源",
+      "url": "https://www.ckzy1.com",
+      "description": "Q0vkvKbnkIbotYTmupDvvIzkvb/nlKjpppnmuK9pcOS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOaaguaXoOawtOWNsOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6pu+8jOavj+aXpeabtOaWsOOAguatpOi1hOa6kOermeWFqOmDqOaYr+S8pueQhuW9seinhuOAgg==",
+      "category": "adult",
+      "api_domain": "https://www.ckzy1.com",
+      "api_json": "https://www.ckzy1.com/api.php/provide/vod/",
+      "api_xml": "https://www.ckzy1.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:04:45.542Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 464,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:04:46.007Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 562,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:04:46.569Z"
+        }
+      }
+    },
+    {
+      "name": "搜av资源",
+      "url": "https://souavzyw.com",
+      "description": "5pCcYXZY56uZ6LWE5rqQ77yM5L2/55So5Zu95aSWQ0RO5L2c5Li65pKt5pS+5rqQ5Zyw5Z2A77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "adult",
+      "api_domain": "https://api.souavzyw.net",
+      "api_json": "https://api.souavzyw.net/api.php/provide/vod/",
+      "api_xml": "https://api.souavzyw.net/api.php/provide/vod/at/xml",
+      "api_source": "help_page",
+      "checked_at": "2026-11-17T18:05:04.991Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 496,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:05:05.487Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 475,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:05.962Z"
+        }
+      }
+    },
+    {
+      "name": "奥斯卡资源",
+      "url": "https://aosikazy1.com",
+      "description": "5aWl5pav5Y2hWOermei1hOa6kO+8jOS9v+eUqOe+juWbvUNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieawtOWNsOW5v+WRiu+8jOeJh+WktOWNgeWHoOenkueahOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6pu+8jOW5tuavj+aXpeabtOaWsOOAguWkh+eUqOe9keWdgO+8mmFvc2lrYXp5LmNvbSgxLTEwKQ==",
+      "category": "adult",
+      "api_domain": "https://aosikazy1.com",
+      "api_json": "https://aosikazy1.com/api.php/provide/vod/",
+      "api_xml": "https://aosikazy1.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:05:08.172Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 477,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:05:08.649Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 480,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:09.129Z"
+        }
+      }
+    },
+    {
+      "name": "jkun资源",
+      "url": "https://jkunzy.com",
+      "description": "amt1bljnq5notYTmupDvvIzkvb/nlKjnvo7lm71DRE7kvZzkuLrmkq3mlL7mupDlnLDlnYDvvIzmnInniYflpLTlub/lkYrvvIzor7foh6rooYzmtYvor5Xmkq3mlL7pgJ/luqbvvIzmr4/ml6Xmm7TmlrDjgII=",
+      "category": "adult",
+      "api_domain": "https://jkunzy.com",
+      "api_json": "https://jkunzy.com/api.php/provide/vod/",
+      "api_xml": "https://jkunzy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:05:13.286Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 557,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:05:13.843Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 546,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:14.389Z"
+        }
+      }
+    },
+    {
+      "name": "滴滴资源网",
+      "url": "https://didizy.com",
+      "description": "5ru05ru0WOermei1hOa6kO+8jOaSreaUvua6kOWcsOWdgOmHh+eUqOe+juWbvUNETu+8jOinhumikemFjeacieawtOWNsOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAguavj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "api_domain": "https://didizy.com",
+      "api_json": "https://didizy.com/api.php/provide/vod/",
+      "api_xml": "https://didizy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:05:17.584Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 448,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:05:18.032Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 454,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:18.486Z"
+        }
+      }
+    },
+    {
+      "name": "豆豆资源",
+      "url": "https://doudouzy.com",
+      "description": "6LGG6LGGWOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s6KeG6aKR5pqC5pyq5Y+R546w5bm/5ZGKLOaSreaUvumAn+W6puivt+iHqua1i+avj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "api_domain": "https://doudouzy.com",
+      "api_json": "https://doudouzy.com/api.php/provide/vod/",
+      "api_xml": "https://doudouzy.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:05:21.553Z",
+      "test": {
+        "json": {
+          "status": "error",
+          "response_time": 432,
+          "available": false,
+          "response_type": "unknown",
+          "error": "content.trim is not a function",
+          "tested_at": "2026-11-17T18:05:21.986Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 596,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:22.582Z"
+        }
+      }
+    },
+    {
+      "name": "森林资源",
+      "url": "http://senlinzy2.com",
+      "description": "5qOu5p6XWOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s6KeG6aKR5pyJ5rC05Y2w5bm/5ZGKLOaSreaUvumAn+W6puivt+iHqua1iyzmnIlI5bCP6K+044CBSOWbvueJh+mHh+mbhizmr4/ml6Xmm7TmlrAs5aSH55So572R5Z2A77yac2VubGluenkyLmNvbSgxLTEwKQ==",
+      "category": "adult",
+      "api_domain": "http://senlinzy2.com",
+      "api_json": "http://senlinzy2.com/api.php/provide/vod/",
+      "api_xml": "http://senlinzy2.com/api.php/provide/vod/at/xml",
+      "api_source": "direct",
+      "checked_at": "2026-11-17T18:05:42.611Z",
+      "test": {
+        "json": {
+          "status": 200,
+          "response_time": 576,
+          "available": true,
+          "response_type": "json",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:43.187Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 536,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:43.724Z"
+        }
+      }
+    },
+    {
+      "name": "155资源",
+      "url": "http://155zy2.com",
+      "description": "MTU1WOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s6KeG6aKR5pyJ5rC05Y2w5bm/5ZGKLOaSreaUvumAn+W6puivt+iHqua1iyzmr4/ml6Xmm7TmlrAs5pyJSOWwj+ivtOOAgeWbvueJh+mHh+mbhizlpIfnlKjnvZHlnYDvvJoxNTV6eTIuY29tKDEtMTAp",
+      "category": "adult",
+      "api_domain": "https://155api.com",
+      "api_json": "https://155api.com/api.php/provide/vod/",
+      "api_xml": "https://155api.com/api.php/provide/vod/at/xml",
+      "api_source": "help_page",
+      "checked_at": "2026-11-17T18:05:48.299Z",
+      "test": {
+        "json": {
+          "status": 200,
+          "response_time": 215,
+          "available": true,
+          "response_type": "json",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:48.514Z"
+        },
+        "xml": {
+          "status": 200,
+          "response_time": 447,
+          "available": true,
+          "response_type": "xml",
+          "error": null,
+          "tested_at": "2026-11-17T18:05:48.961Z"
+        }
+      }
+    }
+  ],
+  "failed": [
+    {
+      "name": "巨量资源",
+      "url": "https://juliang.app",
+      "description": "5beo6YeP6LWE5rqQ6YeH6ZuG6LWE5rqQ56uZ5a6Y5pa55a+E6K+t77yaIOWKoOi9veaFou+8n+aIkeS7rOino+WGs+OAgiDlub/lkYrlpJrvvJ/miJHku6zlh4/lsJHjgIIg55S76LSo57OK77yf5oiR5Lus5o+Q5Y2H44CCIOabtOW/q+OAgeabtOa4heaZsOOAgeabtOWwkeaJk+aJsOOAgiDotYTmupDnq5nvvIzkuZ/or6XljYfnuqfkuobjgIIg6YeN5paw5a6a5LmJ6LWE5rqQ56uZ5L2T6aqM",
+      "category": "media",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:00:10.871Z"
+    },
+    {
+      "name": "星夜资源站",
+      "url": "https://xyezy.com",
+      "description": "5pif5aScWOermei1hOa6kO+8jOS9v+eUqOWbveWklmlw5L2c5Li65pKt5pS+5rqQ5Zyw5Z2A77yM5pqC5peg5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC5q+P5pel5pu05paw44CC",
+      "category": "adult",
+      "status": "conn_refused",
+      "error": "connect ECONNREFUSED 0.0.0.0:443",
+      "checked_at": "2026-11-17T18:00:11.386Z"
+    },
+    {
+      "name": "OKZhibo 直播源",
+      "url": "https://okzhibo.live/#live",
+      "description": "T0taaGlibyDnm7Tmkq3vvIzotrPnkIPnr67nkIPnsbvnmoTnm7Tmkq3mupDvvIzmlK/mjIFtM3U455qE5qC85byP44CC5YW35L2T55qE5a+55o6l6ZyA6KaB55yL5LuW5Lus55qE5paH5qGj",
+      "category": "media",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:00:29.421Z"
+    },
+    {
+      "name": "优质资源站",
+      "url": "https://www.yzzy.tv",
+      "description": "6buR5pyo6ICz5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrms5vmkq1DbG91ZGZsYXJlLOmAn+W6puiHqua1iw==",
+      "category": "media",
+      "status": "blocked",
+      "error": "HTTP 403",
+      "checked_at": "2026-11-17T18:01:38.244Z"
+    },
+    {
+      "name": "虎牙资源",
+      "url": "https://huyazy.com",
+      "description": "6JmO54mZ5b2x6KeG6LWE5rqQ6YeH6ZuG56uZ77yM5q+P5pel6YO95pyJ5pu05paw5YaF5a6544CC6KeG6aKR5pKt5pS+5Zyw5Z2A6YeH55So6Z+p5Zu957q/6Lev77yM5L2G5Y+v6IO95Lya5pyJ5rC05Y2w5bm/5ZGK77yM6K+35oKo6Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "status": "timeout",
+      "error": "timeout of 8000ms exceeded",
+      "checked_at": "2026-11-17T18:01:50.718Z"
+    },
+    {
+      "name": "iKun资源",
+      "url": "https://ikunzy.net",
+      "description": "aUt1buW9seinhui1hOa6kOmHh+mbhuermSzmr4/ml6Xmm7TmlrAs5pKt5pS+5Zyw5Z2A5Li6576O5Zu9Y2RuLOinhumikeacieawtOWNsOW5v+WRiizpgJ/luqboh6rmtYs=",
+      "category": "media",
+      "status": "conn_refused",
+      "error": "connect ECONNREFUSED 0.0.0.0:443",
+      "checked_at": "2026-11-17T18:01:51.230Z"
+    },
+    {
+      "name": "麒麟资源",
+      "url": "https://www.qilinzyz.com",
+      "description": "6bqS6bqf6LWE5rqQKOS7mOi0uSnmmK/ogZrlkIjjgJDohb7orq/jgIHniLHlpYfoibrjgIHkvJjphbfjgIHoipLmnpzjgIFC56uZ44CRNeWkp+ermemHh+mbhizmnInmmI7mmJ8s6LWE6K6v6YeH6ZuG",
+      "category": "media",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:02:00.136Z"
+    },
+    {
+      "name": "新浪资源",
+      "url": "https://www.xinlangzy.net",
+      "description": "5paw5rWq5b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOavj+aXpeabtOaWsCzmkq3mlL7lnLDlnYDkuLrlpKfpmYZjZG4s5pyJ5rC05Y2w5bm/5ZGKLOmAn+W6puiHqua1iyznibnmrorotYTmupDljIXmi6wo55+t5YmnLOS9k+iCsik=",
+      "category": "media",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:03:02.530Z"
+    },
+    {
+      "name": "无尽资源",
+      "url": "https://www.wujinzy.net",
+      "description": "5peg5bC95b2x6KeG6LWE5rqQ6YeH6ZuG56uZLOaSreaUvuWcsOWdgOS4uuWbveWklmlwLOacieeJh+WktOW5v+WRiuWSjOawtOWNsOW5v+WRiizotYTmupDmr4/ml6Xmm7TmlrAs6YCf5bqm6Ieq5rWL",
+      "category": "media",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:03:13.544Z"
+    },
+    {
+      "name": "红牛资源",
+      "url": "https://hongniuzy.net",
+      "description": "57qi54mb5b2x6KeG6LWE5rqQ6YeH6ZuG56uZ77yM5pKt5pS+5Zyw5Z2A5Li65Zu95YaFY2Ru77yM5pyJ5rC05Y2w5bm/5ZGK77yM6K+36Ieq6KGM5rWL6K+V5pKt5pS+6YCf5bqm44CC",
+      "category": "media",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:03:33.781Z"
+    },
+    {
+      "name": "魔都资源",
+      "url": "https://moduzy.com",
+      "description": "6a2U6YO96LWE5rqQLOi1hOa6kOS4u+aJk+WKqOa8qyzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s5pKt5pS+6YCf5bqm6K+36Ieq5rWLLOacieawtOWNsOW5v+WRiizmr4/ml6Xmm7TmlrAs5aSH55So572R5Z2A77yabW9kdXp5LmNvbSgxLTUp",
+      "category": "media",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:03:34.534Z"
+    },
+    {
+      "name": "黑料资源",
+      "url": "https://heiliaozy.com",
+      "description": "6buR5paZ6LWE5rqQeOermei1hOa6kO+8jOS9v+eUqOWbveWklkNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieawtOWNsOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAgg==",
+      "category": "adult",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:04:10.482Z"
+    },
+    {
+      "name": "小鸡资源",
+      "url": "https://xiaojizy.live",
+      "description": "5bCP6bihWOermei1hOa6kO+8jOS9v+eUqOe+juWbvUNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieaPkuaSreW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAguavj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:04:19.309Z"
+    },
+    {
+      "name": "大地资源",
+      "url": "https://dadizy11.com",
+      "description": "5aSn5ZywWOermei1hOa6kO+8jOS9v+eUqOe+juWbvUNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieaPkuaSreW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAgg==",
+      "category": "adult",
+      "status": "timeout",
+      "error": "timeout of 8000ms exceeded",
+      "checked_at": "2026-11-17T18:04:27.814Z"
+    },
+    {
+      "name": "奶香香资源",
+      "url": "https://www.nxxzyuan.vip",
+      "description": "5aW26aaZ6aaZWOermei1hOa6kO+8jOS9v+eUqOWbveWklmNkbuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieeJh+WktOeJh+S4reeJh+WwvuW5v+WRiu+8jOacieWwj+ivtOmHh+mbhuaOpeWPo++8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAguavj+aXpeabtOaWsA==",
+      "category": "adult",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:04:30.727Z"
+    },
+    {
+      "name": "杏吧资源",
+      "url": "https://sex8zy1.com",
+      "description": "5p2P5ZCneOermei1hOa6kOmHh+mbhuerme+8jOavj+aXpemDveacieabtOaWsOWGheWuueOAguinhumikeaSreaUvuWcsOWdgOmHh+eUqOWbveWklue6v+i3r++8jOaaguaXoOawtOWNsOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAgg==",
+      "category": "adult",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:04:47.782Z"
+    },
+    {
+      "name": "大奶子资源",
+      "url": "https://danaizizy.com",
+      "description": "5aSn5aW25a2QWOermei1hOa6kO+8jOS9v+eUqOe+juWbvUNETuS9nOS4uuaSreaUvua6kOWcsOWdgO+8jOacieeJh+WktOW5v+WRiu+8jOivt+iHquihjOa1i+ivleaSreaUvumAn+W6puOAguavj+aXpeabtOaWsOOAgg==",
+      "category": "adult",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:04:51.475Z"
+    },
+    {
+      "name": "精品x资源",
+      "url": "https://jingpinx.com",
+      "description": "57K+5ZOBWOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71pcCzop4bpopHmnInmsLTljbDlub/lkYos5pKt5pS+6YCf5bqm6K+36Ieq5rWLLOavj+aXpeabtOaWsA==",
+      "category": "adult",
+      "status": "conn_refused",
+      "error": "connect ECONNREFUSED 0.0.0.0:443",
+      "checked_at": "2026-11-17T18:05:23.095Z"
+    },
+    {
+      "name": "鲨鱼资源网",
+      "url": "http://shayuzy5.com",
+      "description": "6bKo6bG86LWE5rqQeOi1hOa6kOmHh+mbhu+8jOaSreaUvua6kOWcsOWdgOS4uue+juWbvWNkbizop4bpopHmnInmsLTljbDlub/lkYos5pKt5pS+6YCf5bqm6K+36Ieq5rWLLOavj+aXpeabtOaWsA==",
+      "category": "adult",
+      "status": "not_found",
+      "error": null,
+      "checked_at": "2026-11-17T18:05:35.619Z"
+    },
+    {
+      "name": "辣椒资源",
+      "url": "http://lajiaozy.com",
+      "description": "6L6j5qSSWOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s6KeG6aKR5pyJ5rC05Y2w5bm/5ZGKLOaSreaUvumAn+W6puivt+iHqua1iyzmnIlI5bCP6K+044CB5Zu+54mH6YeH6ZuGLOavj+aXpeabtOaWsA==",
+      "category": "adult",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:05:39.349Z"
+    },
+    {
+      "name": "色猫资源",
+      "url": "http://semaozy1.com",
+      "description": "6Imy54yrWOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s5pKt5pS+6YCf5bqm6K+36Ieq5rWLLOavj+aXpeabtOaWsA==",
+      "category": "adult",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:05:51.945Z"
+    },
+    {
+      "name": "乐播资源",
+      "url": "http://lebozy5.com",
+      "description": "5LmQ5pKtWOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s5pKt5pS+6YCf5bqm6K+36Ieq5rWLLOacieawtOWNsOW5v+WRiizmr4/ml6Xmm7TmlrAs5aSH55So572R5Z2A77yabGVib3p5NS5jb20oMS0xMCk=",
+      "category": "adult",
+      "status": "conn_refused",
+      "error": "connect ECONNREFUSED 0.0.0.0:80",
+      "checked_at": "2026-11-17T18:05:52.456Z"
+    },
+    {
+      "name": "玉兔资源",
+      "url": "https://yutuzy.com",
+      "description": "546J5YWUWOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s5pKt5pS+6YCf5bqm6K+36Ieq5rWLLOacieawtOWNsC/mj5Lmkq3lub/lkYos5q+P5pel5pu05paw",
+      "category": "adult",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:05:53.500Z"
+    },
+    {
+      "name": "老色P资源",
+      "url": "https://laosebizy.com",
+      "description": "6ICB6ImyUCxY56uZ6LWE5rqQLOaSreaUvua6kOWcsOWdgOS4uue+juWbvWNkbizmkq3mlL7pgJ/luqbor7foh6rmtYss5pyJ5rC05Y2wL+aPkuaSreW5v+WRiizmr4/ml6Xmm7TmlrA=",
+      "category": "adult",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:05:54.631Z"
+    },
+    {
+      "name": "番号资源",
+      "url": "http://fhzy1.com",
+      "description": "55Wq5Y+3WOermei1hOa6kCzmkq3mlL7mupDlnLDlnYDkuLrnvo7lm71jZG4s5pyJ5rC05Y2wL+aPkuaSreW5v+WRiizmkq3mlL7pgJ/luqbor7foh6rmtYss5q+P5pel5pu05pawLOacieWwj+ivtOmHh+mbhmFwaQ==",
+      "category": "adult",
+      "status": "conn_reset",
+      "error": "read ECONNRESET",
+      "checked_at": "2026-11-17T18:05:56.342Z"
+    }
+  ]
+}
